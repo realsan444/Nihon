@@ -1,13 +1,29 @@
+-- Define the required key
 local requiredKey = "AHVDSODHFDNHFEISHNFNVDSVDISVBDSIHFBNSVD"
 
--- Check if the key exists in _G
-if _G.Key == requiredKey then
+-- Check if the key exists in a saved file or _G.Key
+local savedKey = nil
+if isfile("key.txt") then
+    savedKey = readfile("key.txt") -- Read the key from the file
+end
+
+-- Validate the key
+if savedKey == requiredKey then
     print("Key valid. Executing script...")
     -- Place your script logic here
-    -- For example:
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/realsan444/nihonhubloadermain/refs/heads/main/Loader/Beta/V1.1"))()
+elseif _G.Key == requiredKey then
+    print("Key valid. Executing script...")
+    -- Place your script logic here
     loadstring(game:HttpGet("https://raw.githubusercontent.com/realsan444/nihonhubloadermain/refs/heads/main/Loader/Beta/V1.1"))()
 else
     -- If the key is invalid
     warn("Invalid key. Access denied.")
     return
+end
+
+-- Optionally save the key to a file
+if _G.SaveKey == true then
+    writefile("key.txt", requiredKey) -- Save the required key to "key.txt"
+    print("Key saved to key.txt.")
 end
