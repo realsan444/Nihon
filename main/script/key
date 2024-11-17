@@ -1,0 +1,13 @@
+local requiredKey = "AHVDSODHFDNHFEISHNFNVDSVDISVBDSIHFBNSVD"
+
+-- Check if the key exists in _G
+if _G.Key == requiredKey then
+    print("Key valid. Executing script...")
+    -- Place your script logic here
+    -- For example:
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/realsan444/nihonhubloadermain/refs/heads/main/Loader/Beta/V1.1"))()
+else
+    -- If the key is invalid
+    warn("Invalid key. Access denied.")
+    return
+end
