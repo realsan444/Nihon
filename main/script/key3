@@ -11,7 +11,7 @@ end
 if (savedKey == requiredKey) or (_G.Key == requiredKey and _G.Key ~= "") then
     print("Key valid. Executing script...")
     -- Place your script logic here
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/realsan444/nihonhubloadermain/refs/heads/main/Loader/Beta/V1.1"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/realsan444/nihonhubloadermain/refs/heads/main/Loader/Beta/V1.2/Big%20Upd!/17/11/2024"))()
 else
     -- If the key is invalid or empty
     warn("Invalid key. Access denied.")
